@@ -1,12 +1,14 @@
 # progrow
 
+![Build](https://github.com/cariad/progrow/actions/workflows/ci.yml/badge.svg) [![codecov](https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8)](https://codecov.io/gh/cariad/progrow)
+
 `progrow` is a Python package for describing the progress of work across rows.
 
-![progrow example](docs/example.png)
+![progrow example](https://github.com/cariad/progrow/raw/main/example.png)
 
 ## Installation
 
-`progrow` requires Python 3.9 or later.
+`progrow` requires Python 3.6 or later.
 
 ```bash
 pip install progrow
