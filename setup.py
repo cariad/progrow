@@ -51,7 +51,7 @@ setup(
     package_data={
         "progrow": ["py.typed"],
     },
-    python_requires=">=3.9",
+    python_requires=">=3.0",
     url="https://github.com/cariad/progrow",
     version=version,
 )
