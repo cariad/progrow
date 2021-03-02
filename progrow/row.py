@@ -60,7 +60,7 @@ class Row:
         if style.show_percent:
             percent, percent_len = self.render_percent(
                 color=style.color,
-                prefix=style.precent_prefix,
+                prefix=style.percent_prefix,
                 length=layout.percent_length,
             )
         else:

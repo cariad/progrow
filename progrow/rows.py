@@ -51,7 +51,7 @@ class Rows:
                 layout.consider_right_fraction(right_len)
 
             if style.show_percent:
-                pc_len = row.render_percent(color=False, prefix=style.precent_prefix)[1]
+                pc_len = row.render_percent(color=False, prefix=style.percent_prefix)[1]
                 layout.consider_percent(pc_len)
 
         return layout
