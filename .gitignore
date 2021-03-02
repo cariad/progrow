@@ -1,0 +1,9 @@
+.DS_Store
+.coverage
+.mypy_cache
+.pytest_cache
+.venv
+coverage.xml
+dist
+htmlcov
+progrow.egg-info

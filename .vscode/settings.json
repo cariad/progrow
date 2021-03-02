@@ -1,0 +1,26 @@
+{
+  "python.pythonPath": ".venv/bin/python3.9",
+  "cSpell.words": [
+    "addopts",
+    "bruceadams",
+    "cariad",
+    "codecov",
+    "color",
+    "pipenv",
+    "pipfile",
+    "progrow",
+    "publish",
+    "pypa",
+    "pypi",
+    "pytest",
+    "refs",
+    "testpaths",
+    "to",
+    "venv",
+    "virtualenvs",
+    "yamllint"
+  ],
+  "cSpell.ignoreRegExpList": [
+    "\\\\x1b\\[33m[a-z]+"
+  ]
+}
