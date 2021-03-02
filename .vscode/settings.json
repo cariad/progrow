@@ -1,0 +1,13 @@
+{
+  "python.pythonPath": ".venv/bin/python3.9",
+  "cSpell.words": [
+    "addopts",
+    "cariad",
+    "color",
+    "progrow",
+    "pytest",
+    "testpaths",
+    "venv",
+    "yamllint",
+  ]
+}
