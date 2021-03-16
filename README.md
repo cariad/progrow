@@ -4,7 +4,7 @@
 
 `progrow` is a Python package for graphing the progress of work across rows.
 
-![progrow example](https://github.com/cariad/progrow/raw/main/docs/example.png)
+![progrow example](https://github.com/cariad/progrow/raw/main/example.png)
 
 Full documentation is available on the project's homepage: https://cariad.github.io/progrow/progrow
 
