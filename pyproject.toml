@@ -2,4 +2,4 @@
 addopts = "--cov=progrow --cov-branch --cov-report=html --cov-report=term-missing:skip-covered --cov-report=xml --no-cov-on-fail"
 log_cli = 1
 log_cli_level = "DEBUG"
-testpaths = "progrow"
+testpaths = "tests"
