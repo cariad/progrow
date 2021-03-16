@@ -1,4 +1,6 @@
-from typing import List
+""" Hosts the `Rows` class. """
+
+from typing import List, Optional
 
 from progrow.layout import Layout
 from progrow.row import Row
@@ -6,12 +8,7 @@ from progrow.style import Style
 
 
 class Rows:
-    """
-    Describes an aligned collection of rows.
-
-    Arguments:
-        rows: Rows.
-    """
+    """ Describes a collection of rows. """
 
     def __init__(self, rows: List[Row] = []) -> None:
         self.rows = rows
@@ -20,23 +17,18 @@ class Rows:
         """
         Appends a row.
 
-        Arguments:
-            name:    Name.
-            current: Current value.
-            maximum: Maximum value.
+        `name` describes the name of the row.
+
+        `current` describes the current progress. For example, `3` if 3 out of 7
+        units of work are complete.
+
+        `maximum` describes the potential maximum progress. For example, `7` if
+        3 out of 7 units of work are complete.
         """
         self.rows.append(Row(name=name, maximum=maximum, current=current))
 
     def calculate_layout(self, style: Style) -> Layout:
-        """
-        Calculates the layout to ensure rendered values are aligned.
-
-        Arguments:
-            style: Style.
-
-        Returns:
-            Layout.
-        """
+        """ Calculates a layout to align all rows. """
 
         layout = Layout()
 
@@ -56,16 +48,10 @@ class Rows:
 
         return layout
 
-    def render(self, style: Style = Style()) -> str:
-        """
-        Renders all the rows to a string.
+    def render(self, style: Optional[Style] = None) -> str:
+        """ Renders the rows. """
 
-        Arguments:
-            style: Style.
-
-        Returns:
-            Rendered rows.
-        """
+        style = style or Style()
 
         layout = self.calculate_layout(style)
         rendered = ""

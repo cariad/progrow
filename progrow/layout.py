@@ -1,22 +1,30 @@
+""" Hosts the `Layout` class. """
+
+
 from typing import Optional
 
 
 class Layout:
     """
-    Row layout.
+    Describes the layout of a row.
 
-    Arguments:
-        left_fraction_length:  Length of the "current" part of the fraction. For
-                               example, `3` to accommodate a three-digit value.
+    This is usually calculated automatically, but you can create a custom layout
+    if, for example, you want to render a stream of `Row` instances. The rows
+    won't be aligned since the layout cannot be precalculated until all values
+    are known, but if you provide your own best-guess layout then the rows will
+    (depending on how good your guess is) align.
 
-        name_length:           Length of the name column. For example, `10` to
-                               accommodate a ten-character name.
+    `left_fraction_length` describes the length to reserve for the enumerator
+    part of the fraction. For example, `3` to accommodate a three-digit value.
 
-        percent_length:        Length of the percentage column. For example, `3`
-                               to accommodate a two-digit value plus `%` symbol.
+    `name_length` describes the length to reserve for the name. For example, `8`
+    to accommodate an 8-character name.
 
-        right_fraction_length: Length of the "maximum" part of the fraction. For
-                               example, `3` to accommodate a three-digit value.
+    `percent_length` describes the length to reserve for the percentage. For
+    example, `3` to accommodate a 2-digit percentage plus the `%` character.
+
+    `right_fraction_length` describes the length to reserve for the denominator
+    part of the fraction. For example, `3` to accommodate a three-digit value.
     """
 
     def __init__(
@@ -27,42 +35,54 @@ class Layout:
         right_fraction_length: Optional[int] = None,
     ) -> None:
         self.left_fraction_length = left_fraction_length
+        """
+        Length to reserve for the enumerator part of the fraction.
+
+        For example, `3` to accommodate a three-digit value.
+        """
+
         self.name_length = name_length
+        """
+        Length to reserve for the name.
+
+        For example, `8` to accommodate an 8-character name.
+        """
+
         self.percent_length = percent_length
+        """
+        Length to reserve for the percentage.
+
+        For example, `3` to accommodate a 2-digit percentage plus the `%`
+        character.
+        """
+
         self.right_fraction_length = right_fraction_length
-
-    def consider_left_fraction(self, consider: int) -> None:
         """
-        Considers a left fraction as potentially the longest.
+        Length to reserve for the denominator part of the fraction.
 
-        Arguments:
-            consider: Length to consider.
+        For example, `3` to accommodate a three-digit value.
         """
-        self.left_fraction_length = max(self.left_fraction_length or 0, consider)
 
-    def consider_name(self, consider: int) -> None:
+    def consider_left_fraction(self, length: int) -> None:
         """
-        Considers a name as potentially the longest.
+        Sets `Layout.left_fraction_length` to `length` if `length` is larger.
+        """
+        self.left_fraction_length = max(self.left_fraction_length or 0, length)
 
-        Arguments:
-            consider: Length to consider.
+    def consider_name(self, length: int) -> None:
         """
-        self.name_length = max(self.name_length or 0, consider)
+        Sets `Layout.name_length` to `length` if `length` is larger.
+        """
+        self.name_length = max(self.name_length or 0, length)
 
-    def consider_percent(self, consider: int) -> None:
+    def consider_percent(self, length: int) -> None:
         """
-        Considers a percentage as potentially the longest.
+        Sets `Layout.percent_length` to `length` if `length` is larger.
+        """
+        self.percent_length = max(self.percent_length or 0, length)
 
-        Arguments:
-            consider: Length to consider.
+    def consider_right_fraction(self, length: int) -> None:
         """
-        self.percent_length = max(self.percent_length or 0, consider)
-
-    def consider_right_fraction(self, consider: int) -> None:
+        Sets `Layout.right_fraction_length` to `length` if `length` is larger.
         """
-        Considers a right fraction as potentially the longest.
-
-        Arguments:
-            consider: Length to consider.
-        """
-        self.right_fraction_length = max(self.right_fraction_length or 0, consider)
+        self.right_fraction_length = max(self.right_fraction_length or 0, length)
