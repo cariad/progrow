@@ -16,6 +16,7 @@ yamllint = "*"
 isort = "*"
 flake8 = "*"
 twine = "*"
+pdoc3 = "*"
 
 [requires]
 python_version = "3.9"
