@@ -12,7 +12,7 @@ def test_append() -> None:
     rows = Rows([Row(name="foo", current=1, maximum=9)])
     rows.append(name="bar", current=2, maximum=9)
     style = Style(color=False, width=40)
-    assert rows.render(style) == "foo ████\nbar ███████▉\n"
+    assert rows.render(style) == "foo ████\nbar ███████▉"
 
 
 @mark.parametrize(
@@ -148,4 +148,4 @@ def test_calculate_layout(rows: Rows, style: Style, expect: Layout) -> None:
     ],
 )
 def test_to_string(rows: Rows, style: Style, expect: List[str]) -> None:
-    assert rows.render(style) == "\n".join(expect) + "\n"
+    assert rows.render(style) == "\n".join(expect)
