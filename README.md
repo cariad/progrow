@@ -1,14 +1,12 @@
 # progrow
 
-![Build](https://github.com/cariad/progrow/actions/workflows/ci.yml/badge.svg) [![codecov](https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8)](https://codecov.io/gh/cariad/progrow)
+[![codecov](https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8)](https://codecov.io/gh/cariad/progrow)
 
 `progrow` is a Python package for graphing the progress of work across rows.
 
 ![progrow example](https://github.com/cariad/progrow/raw/main/docs/example.png)
 
-## Rendering a single row
-
-
+Full documentation is available on the project's homepage: https://cariad.github.io/progrow/progrow
 
 ## Thank you! 🎉
 

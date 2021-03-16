@@ -1,0 +1,1593 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>progrow API documentation</title>
+<meta name="description" content="[![codecov](https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8)](https://codecov.io/gh/cariad/progrow) …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Package <code>progrow</code></h1>
+</header>
+<section id="section-intro">
+<p><a href="https://codecov.io/gh/cariad/progrow"><img alt="codecov" src="https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8"></a></p>
+<p><strong>progrow</strong> is a Python package for graphing the progress of work.</p>
+<p><img alt="" src="example.png"></p>
+<h2 id="installation">Installation</h2>
+<p><strong>progrow</strong> requires Python 3.6 or later.</p>
+<pre><code class="language-bash">pip install progrow
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="single-row">Single row</h3>
+<p>To render a single row to a string, create a <code><a title="progrow.Row" href="#progrow.Row">Row</a></code> and call <code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<pre><code class="language-python">from progrow import Row
+
+row = Row(&quot;apple harvest&quot;, current=23, maximum=100)
+print(row.render())
+</code></pre>
+<pre><code class="language-text">apple harvest ████████▉
+</code></pre>
+<h3 id="styling">Styling</h3>
+<p>To customise the render, pass a <code><a title="progrow.Style" href="#progrow.Style">Style</a></code> into <code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<pre><code class="language-python">from progrow import Row, Style
+
+row = Row(&quot;apple harvest&quot;, current=23, maximum=100)
+
+style = Style(
+    name_suffix=&quot; progress: &quot;,
+    show_fraction=True,
+    show_percent=True,
+)
+
+print(row.render(style=style))
+</code></pre>
+<pre><code class="language-text">apple harvest progress: ███▌            23 / 100 • 23%
+</code></pre>
+<h3 id="multiple-rows">Multiple rows</h3>
+<p>Create a <code><a title="progrow.Rows" href="#progrow.Rows">Rows</a></code> and call <code><a title="progrow.Rows.append" href="#progrow.Rows.append">Rows.append()</a></code> for each row.</p>
+<pre><code class="language-python">from progrow import Rows, Style
+
+rows = Rows()
+rows.append(&quot;apple harvest&quot;, current=1, maximum=9)
+rows.append(&quot;banana harvest&quot;, current=9, maximum=99)
+rows.append(&quot;caramel harvest&quot;, current=100, maximum=100)
+
+style = Style(show_fraction=True, show_percent=True)
+
+print(rows.render(style))
+</code></pre>
+<pre><code class="language-text">apple harvest   ██▎                    1 /   9 •  11%
+banana harvest  █▊                     9 /  99 •   9%
+caramel harvest ███████████████████▉ 100 / 100 • 100%
+</code></pre>
+<h2 id="issues">Issues</h2>
+<p>Please report any issues at
+<a href="https://github.com/cariad/progrow">the project homepage on GitHub</a>.</p>
+<h2 id="about">About</h2>
+<p>Hi! 👋
+I'm <a href="https://cariad.io">Cariad Eccleston</a>, and I developed <strong>progrow</strong>.</p>
+<p>I'm a freelance DevOps engineer, and open-source software is important to me. If
+<strong>progrow</strong> helps you, please consider supporting future development by telling
+your friends, starring <a href="https://github.com/cariad/progrow">this project on GitHub</a>
+and <a href="https://github.com/sponsors/cariad">sponsoring me</a>.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+[![codecov](https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8)](https://codecov.io/gh/cariad/progrow)
+
+**progrow** is a Python package for graphing the progress of work.
+
+.. image:: example.png
+
+## Installation
+
+**progrow** requires Python 3.6 or later.
+
+```bash
+pip install progrow
+```
+
+## Usage
+
+### Single row
+
+To render a single row to a string, create a `Row` and call `Row.render`.
+
+```python
+from progrow import Row
+
+row = Row(&#34;apple harvest&#34;, current=23, maximum=100)
+print(row.render())
+```
+
+```text
+apple harvest ████████▉
+```
+
+### Styling
+
+To customise the render, pass a `Style` into `Row.render`.
+
+```python
+from progrow import Row, Style
+
+row = Row(&#34;apple harvest&#34;, current=23, maximum=100)
+
+style = Style(
+    name_suffix=&#34; progress: &#34;,
+    show_fraction=True,
+    show_percent=True,
+)
+
+print(row.render(style=style))
+```
+
+```text
+apple harvest progress: ███▌            23 / 100 • 23%
+```
+
+### Multiple rows
+
+Create a `Rows` and call `Rows.append` for each row.
+
+```python
+from progrow import Rows, Style
+
+rows = Rows()
+rows.append(&#34;apple harvest&#34;, current=1, maximum=9)
+rows.append(&#34;banana harvest&#34;, current=9, maximum=99)
+rows.append(&#34;caramel harvest&#34;, current=100, maximum=100)
+
+style = Style(show_fraction=True, show_percent=True)
+
+print(rows.render(style))
+```
+
+```text
+apple harvest   ██▎                    1 /   9 •  11%
+banana harvest  █▊                     9 /  99 •   9%
+caramel harvest ███████████████████▉ 100 / 100 • 100%
+```
+
+## Issues
+
+Please report any issues at
+[the project homepage on GitHub](https://github.com/cariad/progrow).
+
+
+## About
+
+Hi! 👋  I&#39;m [Cariad Eccleston](https://cariad.io), and I developed **progrow**.
+
+I&#39;m a freelance DevOps engineer, and open-source software is important to me. If
+**progrow** helps you, please consider supporting future development by telling
+your friends, starring [this project on GitHub](https://github.com/cariad/progrow)
+and [sponsoring me](https://github.com/sponsors/cariad).
+
+&#34;&#34;&#34;
+
+from progrow.layout import Layout
+from progrow.row import Row
+from progrow.rows import Rows
+from progrow.style import Style
+
+__all__ = [&#34;Layout&#34;, &#34;Row&#34;, &#34;Rows&#34;, &#34;Style&#34;]</code></pre>
+</details>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="progrow.layout" href="layout.html">progrow.layout</a></code></dt>
+<dd>
+<div class="desc"><p>Hosts the <code><a title="progrow.Layout" href="#progrow.Layout">Layout</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="progrow.row" href="row.html">progrow.row</a></code></dt>
+<dd>
+<div class="desc"><p>Hosts the <code><a title="progrow.Row" href="#progrow.Row">Row</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="progrow.rows" href="rows.html">progrow.rows</a></code></dt>
+<dd>
+<div class="desc"><p>Hosts the <code><a title="progrow.Rows" href="#progrow.Rows">Rows</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="progrow.style" href="style.html">progrow.style</a></code></dt>
+<dd>
+<div class="desc"><p>Hosts the <code><a title="progrow.Style" href="#progrow.Style">Style</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="progrow.version" href="version.html">progrow.version</a></code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="progrow.Layout"><code class="flex name class">
+<span>class <span class="ident">Layout</span></span>
+<span>(</span><span>left_fraction_length: Optional[int] = None, name_length: Optional[int] = None, percent_length: Optional[int] = None, right_fraction_length: Optional[int] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Describes the layout of a row.</p>
+<p>This is usually calculated automatically, but you can create a custom layout
+if, for example, you want to render a stream of <code><a title="progrow.Row" href="#progrow.Row">Row</a></code> instances. The rows
+won't be aligned since the layout cannot be precalculated until all values
+are known, but if you provide your own best-guess layout then the rows will
+(depending on how good your guess is) align.</p>
+<p><code>left_fraction_length</code> describes the length to reserve for the enumerator
+part of the fraction. For example, <code>3</code> to accommodate a three-digit value.</p>
+<p><code>name_length</code> describes the length to reserve for the name. For example, <code>8</code>
+to accommodate an 8-character name.</p>
+<p><code>percent_length</code> describes the length to reserve for the percentage. For
+example, <code>3</code> to accommodate a 2-digit percentage plus the <code>%</code> character.</p>
+<p><code>right_fraction_length</code> describes the length to reserve for the denominator
+part of the fraction. For example, <code>3</code> to accommodate a three-digit value.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Layout:
+    &#34;&#34;&#34;
+    Describes the layout of a row.
+
+    This is usually calculated automatically, but you can create a custom layout
+    if, for example, you want to render a stream of `Row` instances. The rows
+    won&#39;t be aligned since the layout cannot be precalculated until all values
+    are known, but if you provide your own best-guess layout then the rows will
+    (depending on how good your guess is) align.
+
+    `left_fraction_length` describes the length to reserve for the enumerator
+    part of the fraction. For example, `3` to accommodate a three-digit value.
+
+    `name_length` describes the length to reserve for the name. For example, `8`
+    to accommodate an 8-character name.
+
+    `percent_length` describes the length to reserve for the percentage. For
+    example, `3` to accommodate a 2-digit percentage plus the `%` character.
+
+    `right_fraction_length` describes the length to reserve for the denominator
+    part of the fraction. For example, `3` to accommodate a three-digit value.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        left_fraction_length: Optional[int] = None,
+        name_length: Optional[int] = None,
+        percent_length: Optional[int] = None,
+        right_fraction_length: Optional[int] = None,
+    ) -&gt; None:
+        self.left_fraction_length = left_fraction_length
+        &#34;&#34;&#34;
+        Length to reserve for the enumerator part of the fraction.
+
+        For example, `3` to accommodate a three-digit value.
+        &#34;&#34;&#34;
+
+        self.name_length = name_length
+        &#34;&#34;&#34;
+        Length to reserve for the name.
+
+        For example, `8` to accommodate an 8-character name.
+        &#34;&#34;&#34;
+
+        self.percent_length = percent_length
+        &#34;&#34;&#34;
+        Length to reserve for the percentage.
+
+        For example, `3` to accommodate a 2-digit percentage plus the `%`
+        character.
+        &#34;&#34;&#34;
+
+        self.right_fraction_length = right_fraction_length
+        &#34;&#34;&#34;
+        Length to reserve for the denominator part of the fraction.
+
+        For example, `3` to accommodate a three-digit value.
+        &#34;&#34;&#34;
+
+    def consider_left_fraction(self, length: int) -&gt; None:
+        &#34;&#34;&#34;
+        Sets `Layout.left_fraction_length` to `length` if `length` is larger.
+        &#34;&#34;&#34;
+        self.left_fraction_length = max(self.left_fraction_length or 0, length)
+
+    def consider_name(self, length: int) -&gt; None:
+        &#34;&#34;&#34;
+        Sets `Layout.name_length` to `length` if `length` is larger.
+        &#34;&#34;&#34;
+        self.name_length = max(self.name_length or 0, length)
+
+    def consider_percent(self, length: int) -&gt; None:
+        &#34;&#34;&#34;
+        Sets `Layout.percent_length` to `length` if `length` is larger.
+        &#34;&#34;&#34;
+        self.percent_length = max(self.percent_length or 0, length)
+
+    def consider_right_fraction(self, length: int) -&gt; None:
+        &#34;&#34;&#34;
+        Sets `Layout.right_fraction_length` to `length` if `length` is larger.
+        &#34;&#34;&#34;
+        self.right_fraction_length = max(self.right_fraction_length or 0, length)</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="progrow.Layout.left_fraction_length"><code class="name">var <span class="ident">left_fraction_length</span></code></dt>
+<dd>
+<div class="desc"><p>Length to reserve for the enumerator part of the fraction.</p>
+<p>For example, <code>3</code> to accommodate a three-digit value.</p></div>
+</dd>
+<dt id="progrow.Layout.name_length"><code class="name">var <span class="ident">name_length</span></code></dt>
+<dd>
+<div class="desc"><p>Length to reserve for the name.</p>
+<p>For example, <code>8</code> to accommodate an 8-character name.</p></div>
+</dd>
+<dt id="progrow.Layout.percent_length"><code class="name">var <span class="ident">percent_length</span></code></dt>
+<dd>
+<div class="desc"><p>Length to reserve for the percentage.</p>
+<p>For example, <code>3</code> to accommodate a 2-digit percentage plus the <code>%</code>
+character.</p></div>
+</dd>
+<dt id="progrow.Layout.right_fraction_length"><code class="name">var <span class="ident">right_fraction_length</span></code></dt>
+<dd>
+<div class="desc"><p>Length to reserve for the denominator part of the fraction.</p>
+<p>For example, <code>3</code> to accommodate a three-digit value.</p></div>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="progrow.Layout.consider_left_fraction"><code class="name flex">
+<span>def <span class="ident">consider_left_fraction</span></span>(<span>self, length: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets <code><a title="progrow.Layout.left_fraction_length" href="#progrow.Layout.left_fraction_length">Layout.left_fraction_length</a></code> to <code>length</code> if <code>length</code> is larger.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def consider_left_fraction(self, length: int) -&gt; None:
+    &#34;&#34;&#34;
+    Sets `Layout.left_fraction_length` to `length` if `length` is larger.
+    &#34;&#34;&#34;
+    self.left_fraction_length = max(self.left_fraction_length or 0, length)</code></pre>
+</details>
+</dd>
+<dt id="progrow.Layout.consider_name"><code class="name flex">
+<span>def <span class="ident">consider_name</span></span>(<span>self, length: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets <code><a title="progrow.Layout.name_length" href="#progrow.Layout.name_length">Layout.name_length</a></code> to <code>length</code> if <code>length</code> is larger.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def consider_name(self, length: int) -&gt; None:
+    &#34;&#34;&#34;
+    Sets `Layout.name_length` to `length` if `length` is larger.
+    &#34;&#34;&#34;
+    self.name_length = max(self.name_length or 0, length)</code></pre>
+</details>
+</dd>
+<dt id="progrow.Layout.consider_percent"><code class="name flex">
+<span>def <span class="ident">consider_percent</span></span>(<span>self, length: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets <code><a title="progrow.Layout.percent_length" href="#progrow.Layout.percent_length">Layout.percent_length</a></code> to <code>length</code> if <code>length</code> is larger.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def consider_percent(self, length: int) -&gt; None:
+    &#34;&#34;&#34;
+    Sets `Layout.percent_length` to `length` if `length` is larger.
+    &#34;&#34;&#34;
+    self.percent_length = max(self.percent_length or 0, length)</code></pre>
+</details>
+</dd>
+<dt id="progrow.Layout.consider_right_fraction"><code class="name flex">
+<span>def <span class="ident">consider_right_fraction</span></span>(<span>self, length: int) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sets <code><a title="progrow.Layout.right_fraction_length" href="#progrow.Layout.right_fraction_length">Layout.right_fraction_length</a></code> to <code>length</code> if <code>length</code> is larger.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def consider_right_fraction(self, length: int) -&gt; None:
+    &#34;&#34;&#34;
+    Sets `Layout.right_fraction_length` to `length` if `length` is larger.
+    &#34;&#34;&#34;
+    self.right_fraction_length = max(self.right_fraction_length or 0, length)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="progrow.Row"><code class="flex name class">
+<span>class <span class="ident">Row</span></span>
+<span>(</span><span>name: str, current: float, maximum: float)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Describes a single row. To create a list of rows, use <code><a title="progrow.Rows" href="#progrow.Rows">Rows</a></code> instead.</p>
+<p><code>name</code> describes the name of this row.</p>
+<p><code>current</code> describes the current progress. For example, <code>3</code> if 3 out of 7
+units of work are complete.</p>
+<p><code>maximum</code> describes the potential maximum progress. For example, <code>7</code> if 3
+out of 7 units of work are complete.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Row:
+    &#34;&#34;&#34;
+    Describes a single row. To create a list of rows, use `Rows` instead.
+
+    `name` describes the name of this row.
+
+    `current` describes the current progress. For example, `3` if 3 out of 7
+    units of work are complete.
+
+    `maximum` describes the potential maximum progress. For example, `7` if 3
+    out of 7 units of work are complete.
+    &#34;&#34;&#34;
+
+    def __init__(self, name: str, current: float, maximum: float) -&gt; None:
+        self.name = name
+        &#34;&#34;&#34; Name of this row &#34;&#34;&#34;
+
+        self.maximum = maximum
+        &#34;&#34;&#34;
+        Current progress.
+
+        For example, `3` if 3 out of 7 units of work are complete.
+        &#34;&#34;&#34;
+
+        self.current = current
+        &#34;&#34;&#34;
+        Potential maximum progress.
+
+        For example, `7` if 3 out of 7 units of work are complete.
+        &#34;&#34;&#34;
+
+    @property
+    def percent(self) -&gt; float:
+        &#34;&#34;&#34;
+        Progress percentage.
+
+        For example, `0.5` if `Row.current` is `5` and `Row.maximum` is `10`.
+        &#34;&#34;&#34;
+        return (1.0 / self.maximum) * self.current
+
+    def render(
+        self,
+        layout: Optional[Layout] = None,
+        style: Optional[Style] = None,
+    ) -&gt; str:
+        &#34;&#34;&#34; Renders the row. &#34;&#34;&#34;
+
+        style = style or Style()
+        layout = layout or Layout()
+
+        name, name_len = self.render_name(
+            color=style.color,
+            suffix=style.name_suffix,
+            length=layout.name_length,
+        )
+
+        if style.show_fraction:
+            fraction, fraction_len = self.render_fraction(
+                color=style.color,
+                prefix=style.fraction_prefix,
+                separator=style.fraction_separator,
+                left_length=layout.left_fraction_length,
+                right_length=layout.right_fraction_length,
+            )
+        else:
+            fraction = &#34;&#34;
+            fraction_len = 0
+
+        if style.show_percent:
+            percent, percent_len = self.render_percent(
+                color=style.color,
+                prefix=style.percent_prefix,
+                length=layout.percent_length,
+            )
+        else:
+            percent = &#34;&#34;
+            percent_len = 0
+
+        bar = self.render_bar(
+            color=style.color,
+            length=style.width - name_len - fraction_len - percent_len,
+        )
+
+        return (name + bar + fraction + percent).rstrip()
+
+    def render_bar(self, color: bool, length: int) -&gt; str:
+        &#34;&#34;&#34;
+        Renders the bar part of the row. To render the entire row, call
+        `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `length` describes the maximum character length of the bar.
+        &#34;&#34;&#34;
+
+        s = &#34;&#34;
+
+        if color:
+            s += str(colorama.Fore.GREEN)
+
+        pc_per_block = 1.0 / length
+        remaining_percent = self.percent
+
+        for _ in range(length):
+            this_pc = min(1.0, (1.0 / pc_per_block) * remaining_percent)
+            remaining_percent -= min(remaining_percent, pc_per_block)
+            s += &#34; &#34; if this_pc == 0.0 else chr(0x258F - floor(this_pc / (1.0 / 7)))
+
+        if color:
+            s += str(colorama.Fore.RESET)
+
+        return s
+
+    def render_fraction(
+        self,
+        color: bool,
+        prefix: str,
+        separator: str,
+        left_length: Optional[int] = None,
+        right_length: Optional[int] = None,
+    ) -&gt; Tuple[str, int]:
+        &#34;&#34;&#34;
+        Renders the fraction part of the row. Returns a tuple describing the
+        rendered fraction and its unformatted length.
+
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `left_length` describes the length to reserve for the enumerator part of
+        the fraction.
+
+        `separator` describes the string to render between the enumerator and
+        denominator.
+
+        `left_length` describes the length to reserve for the denominator part
+        of the fraction.
+
+        `prefix` describes the string to render before the enumerator.
+        &#34;&#34;&#34;
+
+        s = (
+            prefix
+            + self.render_left_fraction(color=color, length=left_length)[0]
+            + separator
+            + self.render_right_fraction(color=color, length=right_length)[0]
+        )
+
+        if color:
+            length = self.render_fraction(
+                color=False,
+                prefix=prefix,
+                separator=separator,
+                left_length=left_length,
+                right_length=right_length,
+            )[1]
+        else:
+            length = len(s)
+
+        return (s, length)
+
+    def render_left_fraction(
+        self,
+        color: bool,
+        length: Optional[int] = None,
+    ) -&gt; Tuple[str, int]:
+        &#34;&#34;&#34;
+        Renders the enumerator part of the row. Returns a tuple describing the
+        rendered enumerator and its unformatted length.
+
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `length` describes the length to pad the enumerator to.
+        &#34;&#34;&#34;
+
+        s = &#34;&#34;
+
+        if color:
+            s += str(colorama.Fore.LIGHTBLUE_EX)
+
+        if length:
+            s += f&#34;{self.current:,}&#34;.rjust(length)
+        else:
+            s += f&#34;{self.current:,}&#34;
+
+        if color:
+            s += str(colorama.Fore.RESET)
+
+        if color:
+            length = self.render_left_fraction(color=False)[1]
+        else:
+            length = len(s)
+
+        return (s, length)
+
+    def render_name(
+        self,
+        color: bool,
+        suffix: str,
+        length: Optional[int] = None,
+    ) -&gt; Tuple[str, int]:
+        &#34;&#34;&#34;
+        Renders the name part of the row. Returns a tuple describing the name
+        and its unformatted length.
+
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `suffix` describes the string to append to the name.
+
+        `length` describes the length to pad the name to.
+        &#34;&#34;&#34;
+
+        s = &#34;&#34;
+
+        if length and len(self.name + suffix) &gt; length:
+            if len(self.name) &lt; length:
+                inc_suffix = suffix[0 : length - len(self.name)]
+                inc_name = self.name
+            else:
+                inc_suffix = &#34;&#34;
+                inc_name = self.name[0:length]
+        else:
+            inc_name = self.name
+            inc_suffix = suffix
+
+        if color:
+            s += str(colorama.Fore.YELLOW)
+
+        s += inc_name
+
+        if color:
+            s += str(colorama.Fore.RESET)
+
+        s += inc_suffix
+
+        if length:
+            padding = length - len(inc_name) - len(inc_suffix)
+            s += &#34; &#34; * padding
+        elif color:
+            length = self.render_name(color=False, suffix=suffix)[1]
+        else:
+            length = len(s)
+
+        return (s, length)
+
+    def render_percent(
+        self,
+        color: bool,
+        prefix: str,
+        length: Optional[int] = None,
+    ) -&gt; Tuple[str, int]:
+        &#34;&#34;&#34;
+        Renders the percentage part of the row. Returns a tuple describing the
+        percentage and its unformatted length.
+
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `prefix` describes the string to prepend to the percentage.
+
+        `length` describes the length to pad the percentage to.
+        &#34;&#34;&#34;
+
+        s = prefix
+
+        if color:
+            s += str(colorama.Fore.CYAN)
+
+        percent = str(floor(self.percent * 100)) + &#34;%&#34;
+
+        if length:
+            numeric_pad = length - len(prefix)
+            s += percent[0:numeric_pad].rjust(numeric_pad)
+        else:
+            s += percent
+
+        if color:
+            s += str(colorama.Fore.RESET)
+
+        if color:
+            length = self.render_percent(color=False, prefix=prefix, length=length)[1]
+        else:
+            length = len(s)
+
+        return (s, length)
+
+    def render_right_fraction(
+        self,
+        color: bool,
+        length: Optional[int] = None,
+    ) -&gt; Tuple[str, int]:
+        &#34;&#34;&#34;
+        Renders the denominator part of the row. Returns a tuple describing the
+        rendered denominator and its unformatted length.
+
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `length` describes the length to pad the denominator to.
+        &#34;&#34;&#34;
+
+        s = &#34;&#34;
+
+        if color:
+            s += str(colorama.Fore.LIGHTBLUE_EX)
+
+        if length:
+            s += f&#34;{self.maximum:,}&#34;.rjust(length)
+        else:
+            s += f&#34;{self.maximum:,}&#34;
+
+        if color:
+            s += str(colorama.Fore.RESET)
+
+        if color:
+            length = self.render_right_fraction(color=False)[1]
+        else:
+            length = len(s)
+
+        return (s, length)</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="progrow.Row.current"><code class="name">var <span class="ident">current</span></code></dt>
+<dd>
+<div class="desc"><p>Potential maximum progress.</p>
+<p>For example, <code>7</code> if 3 out of 7 units of work are complete.</p></div>
+</dd>
+<dt id="progrow.Row.maximum"><code class="name">var <span class="ident">maximum</span></code></dt>
+<dd>
+<div class="desc"><p>Current progress.</p>
+<p>For example, <code>3</code> if 3 out of 7 units of work are complete.</p></div>
+</dd>
+<dt id="progrow.Row.name"><code class="name">var <span class="ident">name</span></code></dt>
+<dd>
+<div class="desc"><p>Name of this row</p></div>
+</dd>
+<dt id="progrow.Row.percent"><code class="name">var <span class="ident">percent</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Progress percentage.</p>
+<p>For example, <code>0.5</code> if <code><a title="progrow.Row.current" href="#progrow.Row.current">Row.current</a></code> is <code>5</code> and <code><a title="progrow.Row.maximum" href="#progrow.Row.maximum">Row.maximum</a></code> is <code>10</code>.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def percent(self) -&gt; float:
+    &#34;&#34;&#34;
+    Progress percentage.
+
+    For example, `0.5` if `Row.current` is `5` and `Row.maximum` is `10`.
+    &#34;&#34;&#34;
+    return (1.0 / self.maximum) * self.current</code></pre>
+</details>
+</dd>
+</dl>
+<h3>Methods</h3>
+<dl>
+<dt id="progrow.Row.render"><code class="name flex">
+<span>def <span class="ident">render</span></span>(<span>self, layout: Optional[<a title="progrow.layout.Layout" href="layout.html#progrow.layout.Layout">Layout</a>] = None, style: Optional[<a title="progrow.style.Style" href="style.html#progrow.style.Style">Style</a>] = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the row.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render(
+    self,
+    layout: Optional[Layout] = None,
+    style: Optional[Style] = None,
+) -&gt; str:
+    &#34;&#34;&#34; Renders the row. &#34;&#34;&#34;
+
+    style = style or Style()
+    layout = layout or Layout()
+
+    name, name_len = self.render_name(
+        color=style.color,
+        suffix=style.name_suffix,
+        length=layout.name_length,
+    )
+
+    if style.show_fraction:
+        fraction, fraction_len = self.render_fraction(
+            color=style.color,
+            prefix=style.fraction_prefix,
+            separator=style.fraction_separator,
+            left_length=layout.left_fraction_length,
+            right_length=layout.right_fraction_length,
+        )
+    else:
+        fraction = &#34;&#34;
+        fraction_len = 0
+
+    if style.show_percent:
+        percent, percent_len = self.render_percent(
+            color=style.color,
+            prefix=style.percent_prefix,
+            length=layout.percent_length,
+        )
+    else:
+        percent = &#34;&#34;
+        percent_len = 0
+
+    bar = self.render_bar(
+        color=style.color,
+        length=style.width - name_len - fraction_len - percent_len,
+    )
+
+    return (name + bar + fraction + percent).rstrip()</code></pre>
+</details>
+</dd>
+<dt id="progrow.Row.render_bar"><code class="name flex">
+<span>def <span class="ident">render_bar</span></span>(<span>self, color: bool, length: int) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the bar part of the row. To render the entire row, call
+<code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<p><code>color</code> describes whether to render in colour or plain text.</p>
+<p><code>length</code> describes the maximum character length of the bar.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_bar(self, color: bool, length: int) -&gt; str:
+    &#34;&#34;&#34;
+    Renders the bar part of the row. To render the entire row, call
+    `Row.render`.
+
+    `color` describes whether to render in colour or plain text.
+
+    `length` describes the maximum character length of the bar.
+    &#34;&#34;&#34;
+
+    s = &#34;&#34;
+
+    if color:
+        s += str(colorama.Fore.GREEN)
+
+    pc_per_block = 1.0 / length
+    remaining_percent = self.percent
+
+    for _ in range(length):
+        this_pc = min(1.0, (1.0 / pc_per_block) * remaining_percent)
+        remaining_percent -= min(remaining_percent, pc_per_block)
+        s += &#34; &#34; if this_pc == 0.0 else chr(0x258F - floor(this_pc / (1.0 / 7)))
+
+    if color:
+        s += str(colorama.Fore.RESET)
+
+    return s</code></pre>
+</details>
+</dd>
+<dt id="progrow.Row.render_fraction"><code class="name flex">
+<span>def <span class="ident">render_fraction</span></span>(<span>self, color: bool, prefix: str, separator: str, left_length: Optional[int] = None, right_length: Optional[int] = None) ‑> Tuple[str, int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the fraction part of the row. Returns a tuple describing the
+rendered fraction and its unformatted length.</p>
+<p>To render the entire row, call <code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<p><code>color</code> describes whether to render in colour or plain text.</p>
+<p><code>left_length</code> describes the length to reserve for the enumerator part of
+the fraction.</p>
+<p><code>separator</code> describes the string to render between the enumerator and
+denominator.</p>
+<p><code>left_length</code> describes the length to reserve for the denominator part
+of the fraction.</p>
+<p><code>prefix</code> describes the string to render before the enumerator.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_fraction(
+    self,
+    color: bool,
+    prefix: str,
+    separator: str,
+    left_length: Optional[int] = None,
+    right_length: Optional[int] = None,
+) -&gt; Tuple[str, int]:
+    &#34;&#34;&#34;
+    Renders the fraction part of the row. Returns a tuple describing the
+    rendered fraction and its unformatted length.
+
+    To render the entire row, call `Row.render`.
+
+    `color` describes whether to render in colour or plain text.
+
+    `left_length` describes the length to reserve for the enumerator part of
+    the fraction.
+
+    `separator` describes the string to render between the enumerator and
+    denominator.
+
+    `left_length` describes the length to reserve for the denominator part
+    of the fraction.
+
+    `prefix` describes the string to render before the enumerator.
+    &#34;&#34;&#34;
+
+    s = (
+        prefix
+        + self.render_left_fraction(color=color, length=left_length)[0]
+        + separator
+        + self.render_right_fraction(color=color, length=right_length)[0]
+    )
+
+    if color:
+        length = self.render_fraction(
+            color=False,
+            prefix=prefix,
+            separator=separator,
+            left_length=left_length,
+            right_length=right_length,
+        )[1]
+    else:
+        length = len(s)
+
+    return (s, length)</code></pre>
+</details>
+</dd>
+<dt id="progrow.Row.render_left_fraction"><code class="name flex">
+<span>def <span class="ident">render_left_fraction</span></span>(<span>self, color: bool, length: Optional[int] = None) ‑> Tuple[str, int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the enumerator part of the row. Returns a tuple describing the
+rendered enumerator and its unformatted length.</p>
+<p>To render the entire row, call <code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<p><code>color</code> describes whether to render in colour or plain text.</p>
+<p><code>length</code> describes the length to pad the enumerator to.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_left_fraction(
+    self,
+    color: bool,
+    length: Optional[int] = None,
+) -&gt; Tuple[str, int]:
+    &#34;&#34;&#34;
+    Renders the enumerator part of the row. Returns a tuple describing the
+    rendered enumerator and its unformatted length.
+
+    To render the entire row, call `Row.render`.
+
+    `color` describes whether to render in colour or plain text.
+
+    `length` describes the length to pad the enumerator to.
+    &#34;&#34;&#34;
+
+    s = &#34;&#34;
+
+    if color:
+        s += str(colorama.Fore.LIGHTBLUE_EX)
+
+    if length:
+        s += f&#34;{self.current:,}&#34;.rjust(length)
+    else:
+        s += f&#34;{self.current:,}&#34;
+
+    if color:
+        s += str(colorama.Fore.RESET)
+
+    if color:
+        length = self.render_left_fraction(color=False)[1]
+    else:
+        length = len(s)
+
+    return (s, length)</code></pre>
+</details>
+</dd>
+<dt id="progrow.Row.render_name"><code class="name flex">
+<span>def <span class="ident">render_name</span></span>(<span>self, color: bool, suffix: str, length: Optional[int] = None) ‑> Tuple[str, int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the name part of the row. Returns a tuple describing the name
+and its unformatted length.</p>
+<p>To render the entire row, call <code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<p><code>color</code> describes whether to render in colour or plain text.</p>
+<p><code>suffix</code> describes the string to append to the name.</p>
+<p><code>length</code> describes the length to pad the name to.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_name(
+    self,
+    color: bool,
+    suffix: str,
+    length: Optional[int] = None,
+) -&gt; Tuple[str, int]:
+    &#34;&#34;&#34;
+    Renders the name part of the row. Returns a tuple describing the name
+    and its unformatted length.
+
+    To render the entire row, call `Row.render`.
+
+    `color` describes whether to render in colour or plain text.
+
+    `suffix` describes the string to append to the name.
+
+    `length` describes the length to pad the name to.
+    &#34;&#34;&#34;
+
+    s = &#34;&#34;
+
+    if length and len(self.name + suffix) &gt; length:
+        if len(self.name) &lt; length:
+            inc_suffix = suffix[0 : length - len(self.name)]
+            inc_name = self.name
+        else:
+            inc_suffix = &#34;&#34;
+            inc_name = self.name[0:length]
+    else:
+        inc_name = self.name
+        inc_suffix = suffix
+
+    if color:
+        s += str(colorama.Fore.YELLOW)
+
+    s += inc_name
+
+    if color:
+        s += str(colorama.Fore.RESET)
+
+    s += inc_suffix
+
+    if length:
+        padding = length - len(inc_name) - len(inc_suffix)
+        s += &#34; &#34; * padding
+    elif color:
+        length = self.render_name(color=False, suffix=suffix)[1]
+    else:
+        length = len(s)
+
+    return (s, length)</code></pre>
+</details>
+</dd>
+<dt id="progrow.Row.render_percent"><code class="name flex">
+<span>def <span class="ident">render_percent</span></span>(<span>self, color: bool, prefix: str, length: Optional[int] = None) ‑> Tuple[str, int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the percentage part of the row. Returns a tuple describing the
+percentage and its unformatted length.</p>
+<p>To render the entire row, call <code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<p><code>color</code> describes whether to render in colour or plain text.</p>
+<p><code>prefix</code> describes the string to prepend to the percentage.</p>
+<p><code>length</code> describes the length to pad the percentage to.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_percent(
+    self,
+    color: bool,
+    prefix: str,
+    length: Optional[int] = None,
+) -&gt; Tuple[str, int]:
+    &#34;&#34;&#34;
+    Renders the percentage part of the row. Returns a tuple describing the
+    percentage and its unformatted length.
+
+    To render the entire row, call `Row.render`.
+
+    `color` describes whether to render in colour or plain text.
+
+    `prefix` describes the string to prepend to the percentage.
+
+    `length` describes the length to pad the percentage to.
+    &#34;&#34;&#34;
+
+    s = prefix
+
+    if color:
+        s += str(colorama.Fore.CYAN)
+
+    percent = str(floor(self.percent * 100)) + &#34;%&#34;
+
+    if length:
+        numeric_pad = length - len(prefix)
+        s += percent[0:numeric_pad].rjust(numeric_pad)
+    else:
+        s += percent
+
+    if color:
+        s += str(colorama.Fore.RESET)
+
+    if color:
+        length = self.render_percent(color=False, prefix=prefix, length=length)[1]
+    else:
+        length = len(s)
+
+    return (s, length)</code></pre>
+</details>
+</dd>
+<dt id="progrow.Row.render_right_fraction"><code class="name flex">
+<span>def <span class="ident">render_right_fraction</span></span>(<span>self, color: bool, length: Optional[int] = None) ‑> Tuple[str, int]</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the denominator part of the row. Returns a tuple describing the
+rendered denominator and its unformatted length.</p>
+<p>To render the entire row, call <code><a title="progrow.Row.render" href="#progrow.Row.render">Row.render()</a></code>.</p>
+<p><code>color</code> describes whether to render in colour or plain text.</p>
+<p><code>length</code> describes the length to pad the denominator to.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render_right_fraction(
+    self,
+    color: bool,
+    length: Optional[int] = None,
+) -&gt; Tuple[str, int]:
+    &#34;&#34;&#34;
+    Renders the denominator part of the row. Returns a tuple describing the
+    rendered denominator and its unformatted length.
+
+    To render the entire row, call `Row.render`.
+
+    `color` describes whether to render in colour or plain text.
+
+    `length` describes the length to pad the denominator to.
+    &#34;&#34;&#34;
+
+    s = &#34;&#34;
+
+    if color:
+        s += str(colorama.Fore.LIGHTBLUE_EX)
+
+    if length:
+        s += f&#34;{self.maximum:,}&#34;.rjust(length)
+    else:
+        s += f&#34;{self.maximum:,}&#34;
+
+    if color:
+        s += str(colorama.Fore.RESET)
+
+    if color:
+        length = self.render_right_fraction(color=False)[1]
+    else:
+        length = len(s)
+
+    return (s, length)</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="progrow.Rows"><code class="flex name class">
+<span>class <span class="ident">Rows</span></span>
+<span>(</span><span>rows: List[<a title="progrow.row.Row" href="row.html#progrow.row.Row">Row</a>] = [])</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Describes a collection of rows.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Rows:
+    &#34;&#34;&#34; Describes a collection of rows. &#34;&#34;&#34;
+
+    def __init__(self, rows: List[Row] = []) -&gt; None:
+        self.rows = rows
+
+    def append(self, name: str, current: float, maximum: float) -&gt; None:
+        &#34;&#34;&#34;
+        Appends a row.
+
+        `name` describes the name of the row.
+
+        `current` describes the current progress. For example, `3` if 3 out of 7
+        units of work are complete.
+
+        `maximum` describes the potential maximum progress. For example, `7` if
+        3 out of 7 units of work are complete.
+        &#34;&#34;&#34;
+        self.rows.append(Row(name=name, maximum=maximum, current=current))
+
+    def calculate_layout(self, style: Style) -&gt; Layout:
+        &#34;&#34;&#34; Calculates a layout to align all rows. &#34;&#34;&#34;
+
+        layout = Layout()
+
+        for row in self.rows:
+            name_len = row.render_name(color=False, suffix=style.name_suffix)[1]
+            layout.consider_name(name_len)
+
+            if style.show_fraction:
+                left_len = row.render_left_fraction(color=False)[1]
+                layout.consider_left_fraction(left_len)
+                right_len = row.render_right_fraction(color=False)[1]
+                layout.consider_right_fraction(right_len)
+
+            if style.show_percent:
+                pc_len = row.render_percent(color=False, prefix=style.percent_prefix)[1]
+                layout.consider_percent(pc_len)
+
+        return layout
+
+    def render(self, style: Optional[Style] = None) -&gt; str:
+        &#34;&#34;&#34; Renders the rows. &#34;&#34;&#34;
+
+        style = style or Style()
+
+        layout = self.calculate_layout(style)
+        rendered = &#34;&#34;
+
+        for row in self.rows:
+            rendered += row.render(layout, style) + &#34;\n&#34;
+
+        return rendered.rstrip()</code></pre>
+</details>
+<h3>Methods</h3>
+<dl>
+<dt id="progrow.Rows.append"><code class="name flex">
+<span>def <span class="ident">append</span></span>(<span>self, name: str, current: float, maximum: float) ‑> NoneType</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Appends a row.</p>
+<p><code>name</code> describes the name of the row.</p>
+<p><code>current</code> describes the current progress. For example, <code>3</code> if 3 out of 7
+units of work are complete.</p>
+<p><code>maximum</code> describes the potential maximum progress. For example, <code>7</code> if
+3 out of 7 units of work are complete.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def append(self, name: str, current: float, maximum: float) -&gt; None:
+    &#34;&#34;&#34;
+    Appends a row.
+
+    `name` describes the name of the row.
+
+    `current` describes the current progress. For example, `3` if 3 out of 7
+    units of work are complete.
+
+    `maximum` describes the potential maximum progress. For example, `7` if
+    3 out of 7 units of work are complete.
+    &#34;&#34;&#34;
+    self.rows.append(Row(name=name, maximum=maximum, current=current))</code></pre>
+</details>
+</dd>
+<dt id="progrow.Rows.calculate_layout"><code class="name flex">
+<span>def <span class="ident">calculate_layout</span></span>(<span>self, style: <a title="progrow.style.Style" href="style.html#progrow.style.Style">Style</a>) ‑> <a title="progrow.layout.Layout" href="layout.html#progrow.layout.Layout">Layout</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Calculates a layout to align all rows.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def calculate_layout(self, style: Style) -&gt; Layout:
+    &#34;&#34;&#34; Calculates a layout to align all rows. &#34;&#34;&#34;
+
+    layout = Layout()
+
+    for row in self.rows:
+        name_len = row.render_name(color=False, suffix=style.name_suffix)[1]
+        layout.consider_name(name_len)
+
+        if style.show_fraction:
+            left_len = row.render_left_fraction(color=False)[1]
+            layout.consider_left_fraction(left_len)
+            right_len = row.render_right_fraction(color=False)[1]
+            layout.consider_right_fraction(right_len)
+
+        if style.show_percent:
+            pc_len = row.render_percent(color=False, prefix=style.percent_prefix)[1]
+            layout.consider_percent(pc_len)
+
+    return layout</code></pre>
+</details>
+</dd>
+<dt id="progrow.Rows.render"><code class="name flex">
+<span>def <span class="ident">render</span></span>(<span>self, style: Optional[<a title="progrow.style.Style" href="style.html#progrow.style.Style">Style</a>] = None) ‑> str</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Renders the rows.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def render(self, style: Optional[Style] = None) -&gt; str:
+    &#34;&#34;&#34; Renders the rows. &#34;&#34;&#34;
+
+    style = style or Style()
+
+    layout = self.calculate_layout(style)
+    rendered = &#34;&#34;
+
+    for row in self.rows:
+        rendered += row.render(layout, style) + &#34;\n&#34;
+
+    return rendered.rstrip()</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+<dt id="progrow.Style"><code class="flex name class">
+<span>class <span class="ident">Style</span></span>
+<span>(</span><span>color: bool = True, name_suffix: str = ' ', show_fraction: bool = False, show_percent: bool = False, width: Optional[int] = None)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Rendering style options.</p>
+<p><code>color</code> describes whether to render in colour or plain text.</p>
+<p><code>name_suffix</code> describes the string to append to the name.</p>
+<p><code>show_fraction</code> describes whether or not to include fractions.</p>
+<p><code>show_percent</code> describes whether or not to include percentages.</p>
+<p><code>width</code> describes the width to render to.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Style:
+    &#34;&#34;&#34;
+    Rendering style options.
+
+    `color` describes whether to render in colour or plain text.
+
+    `name_suffix` describes the string to append to the name.
+
+    `show_fraction` describes whether or not to include fractions.
+
+    `show_percent` describes whether or not to include percentages.
+
+    `width` describes the width to render to.
+    &#34;&#34;&#34;
+
+    def __init__(
+        self,
+        color: bool = True,
+        name_suffix: str = &#34; &#34;,
+        show_fraction: bool = False,
+        show_percent: bool = False,
+        width: Optional[int] = None,
+    ) -&gt; None:
+        self.color = color
+        &#34;&#34;&#34; Whether to render in colour or plain text. &#34;&#34;&#34;
+
+        self.name_suffix = name_suffix
+        &#34;&#34;&#34; String to append to the name. &#34;&#34;&#34;
+
+        self.show_fraction = show_fraction
+        &#34;&#34;&#34; Whether or not to include fractions. &#34;&#34;&#34;
+
+        self.show_percent = show_percent
+        &#34;&#34;&#34; Whether or not to include percentages. &#34;&#34;&#34;
+
+        self.force_width = width
+        &#34;&#34;&#34; Width to render to. &#34;&#34;&#34;
+
+    @property
+    def fraction_prefix(self) -&gt; str:
+        &#34;&#34;&#34; String to inject before the fraction. &#34;&#34;&#34;
+        return &#34; &#34;
+
+    @property
+    def fraction_separator(self) -&gt; str:
+        &#34;&#34;&#34; String to inject between the enumerator and denominator. &#34;&#34;&#34;
+        return &#34; / &#34;
+
+    @property
+    def percent_prefix(self) -&gt; str:
+        &#34;&#34;&#34; String to inject before percentages. &#34;&#34;&#34;
+        return &#34; • &#34; if self.show_fraction else &#34; &#34;
+
+    @property
+    def width(self) -&gt; int:
+        &#34;&#34;&#34;
+        Actual width to render to. The terminal width if no other width was
+        requested.
+        &#34;&#34;&#34;
+        if self.force_width:
+            return self.force_width
+        (width, _) = get_terminal_size((80, 20))
+        return width</code></pre>
+</details>
+<h3>Instance variables</h3>
+<dl>
+<dt id="progrow.Style.color"><code class="name">var <span class="ident">color</span></code></dt>
+<dd>
+<div class="desc"><p>Whether to render in colour or plain text.</p></div>
+</dd>
+<dt id="progrow.Style.force_width"><code class="name">var <span class="ident">force_width</span></code></dt>
+<dd>
+<div class="desc"><p>Width to render to.</p></div>
+</dd>
+<dt id="progrow.Style.fraction_prefix"><code class="name">var <span class="ident">fraction_prefix</span> : str</code></dt>
+<dd>
+<div class="desc"><p>String to inject before the fraction.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def fraction_prefix(self) -&gt; str:
+    &#34;&#34;&#34; String to inject before the fraction. &#34;&#34;&#34;
+    return &#34; &#34;</code></pre>
+</details>
+</dd>
+<dt id="progrow.Style.fraction_separator"><code class="name">var <span class="ident">fraction_separator</span> : str</code></dt>
+<dd>
+<div class="desc"><p>String to inject between the enumerator and denominator.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def fraction_separator(self) -&gt; str:
+    &#34;&#34;&#34; String to inject between the enumerator and denominator. &#34;&#34;&#34;
+    return &#34; / &#34;</code></pre>
+</details>
+</dd>
+<dt id="progrow.Style.name_suffix"><code class="name">var <span class="ident">name_suffix</span></code></dt>
+<dd>
+<div class="desc"><p>String to append to the name.</p></div>
+</dd>
+<dt id="progrow.Style.percent_prefix"><code class="name">var <span class="ident">percent_prefix</span> : str</code></dt>
+<dd>
+<div class="desc"><p>String to inject before percentages.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def percent_prefix(self) -&gt; str:
+    &#34;&#34;&#34; String to inject before percentages. &#34;&#34;&#34;
+    return &#34; • &#34; if self.show_fraction else &#34; &#34;</code></pre>
+</details>
+</dd>
+<dt id="progrow.Style.show_fraction"><code class="name">var <span class="ident">show_fraction</span></code></dt>
+<dd>
+<div class="desc"><p>Whether or not to include fractions.</p></div>
+</dd>
+<dt id="progrow.Style.show_percent"><code class="name">var <span class="ident">show_percent</span></code></dt>
+<dd>
+<div class="desc"><p>Whether or not to include percentages.</p></div>
+</dd>
+<dt id="progrow.Style.width"><code class="name">var <span class="ident">width</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Actual width to render to. The terminal width if no other width was
+requested.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">@property
+def width(self) -&gt; int:
+    &#34;&#34;&#34;
+    Actual width to render to. The terminal width if no other width was
+    requested.
+    &#34;&#34;&#34;
+    if self.force_width:
+        return self.force_width
+    (width, _) = get_terminal_size((80, 20))
+    return width</code></pre>
+</details>
+</dd>
+</dl>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#single-row">Single row</a></li>
+<li><a href="#styling">Styling</a></li>
+<li><a href="#multiple-rows">Multiple rows</a></li>
+</ul>
+</li>
+<li><a href="#issues">Issues</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="progrow.layout" href="layout.html">progrow.layout</a></code></li>
+<li><code><a title="progrow.row" href="row.html">progrow.row</a></code></li>
+<li><code><a title="progrow.rows" href="rows.html">progrow.rows</a></code></li>
+<li><code><a title="progrow.style" href="style.html">progrow.style</a></code></li>
+<li><code><a title="progrow.version" href="version.html">progrow.version</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="progrow.Layout" href="#progrow.Layout">Layout</a></code></h4>
+<ul class="">
+<li><code><a title="progrow.Layout.consider_left_fraction" href="#progrow.Layout.consider_left_fraction">consider_left_fraction</a></code></li>
+<li><code><a title="progrow.Layout.consider_name" href="#progrow.Layout.consider_name">consider_name</a></code></li>
+<li><code><a title="progrow.Layout.consider_percent" href="#progrow.Layout.consider_percent">consider_percent</a></code></li>
+<li><code><a title="progrow.Layout.consider_right_fraction" href="#progrow.Layout.consider_right_fraction">consider_right_fraction</a></code></li>
+<li><code><a title="progrow.Layout.left_fraction_length" href="#progrow.Layout.left_fraction_length">left_fraction_length</a></code></li>
+<li><code><a title="progrow.Layout.name_length" href="#progrow.Layout.name_length">name_length</a></code></li>
+<li><code><a title="progrow.Layout.percent_length" href="#progrow.Layout.percent_length">percent_length</a></code></li>
+<li><code><a title="progrow.Layout.right_fraction_length" href="#progrow.Layout.right_fraction_length">right_fraction_length</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="progrow.Row" href="#progrow.Row">Row</a></code></h4>
+<ul class="">
+<li><code><a title="progrow.Row.current" href="#progrow.Row.current">current</a></code></li>
+<li><code><a title="progrow.Row.maximum" href="#progrow.Row.maximum">maximum</a></code></li>
+<li><code><a title="progrow.Row.name" href="#progrow.Row.name">name</a></code></li>
+<li><code><a title="progrow.Row.percent" href="#progrow.Row.percent">percent</a></code></li>
+<li><code><a title="progrow.Row.render" href="#progrow.Row.render">render</a></code></li>
+<li><code><a title="progrow.Row.render_bar" href="#progrow.Row.render_bar">render_bar</a></code></li>
+<li><code><a title="progrow.Row.render_fraction" href="#progrow.Row.render_fraction">render_fraction</a></code></li>
+<li><code><a title="progrow.Row.render_left_fraction" href="#progrow.Row.render_left_fraction">render_left_fraction</a></code></li>
+<li><code><a title="progrow.Row.render_name" href="#progrow.Row.render_name">render_name</a></code></li>
+<li><code><a title="progrow.Row.render_percent" href="#progrow.Row.render_percent">render_percent</a></code></li>
+<li><code><a title="progrow.Row.render_right_fraction" href="#progrow.Row.render_right_fraction">render_right_fraction</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="progrow.Rows" href="#progrow.Rows">Rows</a></code></h4>
+<ul class="">
+<li><code><a title="progrow.Rows.append" href="#progrow.Rows.append">append</a></code></li>
+<li><code><a title="progrow.Rows.calculate_layout" href="#progrow.Rows.calculate_layout">calculate_layout</a></code></li>
+<li><code><a title="progrow.Rows.render" href="#progrow.Rows.render">render</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="progrow.Style" href="#progrow.Style">Style</a></code></h4>
+<ul class="two-column">
+<li><code><a title="progrow.Style.color" href="#progrow.Style.color">color</a></code></li>
+<li><code><a title="progrow.Style.force_width" href="#progrow.Style.force_width">force_width</a></code></li>
+<li><code><a title="progrow.Style.fraction_prefix" href="#progrow.Style.fraction_prefix">fraction_prefix</a></code></li>
+<li><code><a title="progrow.Style.fraction_separator" href="#progrow.Style.fraction_separator">fraction_separator</a></code></li>
+<li><code><a title="progrow.Style.name_suffix" href="#progrow.Style.name_suffix">name_suffix</a></code></li>
+<li><code><a title="progrow.Style.percent_prefix" href="#progrow.Style.percent_prefix">percent_prefix</a></code></li>
+<li><code><a title="progrow.Style.show_fraction" href="#progrow.Style.show_fraction">show_fraction</a></code></li>
+<li><code><a title="progrow.Style.show_percent" href="#progrow.Style.show_percent">show_percent</a></code></li>
+<li><code><a title="progrow.Style.width" href="#progrow.Style.width">width</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

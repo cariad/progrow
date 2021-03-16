@@ -1,4 +1,4 @@
-"""Row classes."""
+""" Hosts the `Row` class. """
 
 from math import floor
 from typing import Optional, Tuple
@@ -11,35 +11,53 @@ from progrow.style import Style
 
 class Row:
     """
-    Describes a row.
+    Describes a single row. To create a list of rows, use `Rows` instead.
 
-    Arguments:
-        name:    Name.
-        current: Current value.
-        maximum: Maximum value.
+    `name` describes the name of this row.
+
+    `current` describes the current progress. For example, `3` if 3 out of 7
+    units of work are complete.
+
+    `maximum` describes the potential maximum progress. For example, `7` if 3
+    out of 7 units of work are complete.
     """
 
     def __init__(self, name: str, current: float, maximum: float) -> None:
         self.name = name
+        """ Name of this row """
+
         self.maximum = maximum
+        """
+        Current progress.
+
+        For example, `3` if 3 out of 7 units of work are complete.
+        """
+
         self.current = current
+        """
+        Potential maximum progress.
+
+        For example, `7` if 3 out of 7 units of work are complete.
+        """
 
     @property
     def percent(self) -> float:
-        """ Gets the percentage of this row's current value. """
+        """
+        Progress percentage.
+
+        For example, `0.5` if `Row.current` is `5` and `Row.maximum` is `10`.
+        """
         return (1.0 / self.maximum) * self.current
 
-    def render(self, layout: Layout = Layout(), style: Style = Style()) -> str:
-        """
-        Renders the row to a string.
+    def render(
+        self,
+        layout: Optional[Layout] = None,
+        style: Optional[Style] = None,
+    ) -> str:
+        """ Renders the row. """
 
-        Arguments:
-            layout: Layout.
-            style:  Style.
-
-        Returns:
-            Rendered row.
-        """
+        style = style or Style()
+        layout = layout or Layout()
 
         name, name_len = self.render_name(
             color=style.color,
@@ -78,11 +96,12 @@ class Row:
 
     def render_bar(self, color: bool, length: int) -> str:
         """
-        Renders the progress bar to a string.
+        Renders the bar part of the row. To render the entire row, call
+        `Row.render`.
 
-        Arguments:
-            color:  Render in color.
-            length: Length to draw to.
+        `color` describes whether to render in colour or plain text.
+
+        `length` describes the maximum character length of the bar.
         """
 
         s = ""
@@ -112,14 +131,23 @@ class Row:
         right_length: Optional[int] = None,
     ) -> Tuple[str, int]:
         """
-        Renders the fraction to a string.
+        Renders the fraction part of the row. Returns a tuple describing the
+        rendered fraction and its unformatted length.
 
-        Arguments:
-            color:        Render in color.
-            left_length:  Optional length to pad the left number to.
-            separator:    String to separate the two numbers.
-            prefix:       Prefix to inject before the left numbers.
-            right_length: Optional length to pad the right number to.
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `left_length` describes the length to reserve for the enumerator part of
+        the fraction.
+
+        `separator` describes the string to render between the enumerator and
+        denominator.
+
+        `left_length` describes the length to reserve for the denominator part
+        of the fraction.
+
+        `prefix` describes the string to render before the enumerator.
         """
 
         s = (
@@ -148,11 +176,14 @@ class Row:
         length: Optional[int] = None,
     ) -> Tuple[str, int]:
         """
-        Renders the left fraction to a string.
+        Renders the enumerator part of the row. Returns a tuple describing the
+        rendered enumerator and its unformatted length.
 
-        Arguments:
-            color:  Render in color.
-            length: Optional length to pad the number to.
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `length` describes the length to pad the enumerator to.
         """
 
         s = ""
@@ -182,12 +213,16 @@ class Row:
         length: Optional[int] = None,
     ) -> Tuple[str, int]:
         """
-        Renders the name to a string.
+        Renders the name part of the row. Returns a tuple describing the name
+        and its unformatted length.
 
-        Arguments:
-            color:  Render in color.
-            suffix: Suffix.
-            length: Optional length to pad the name to.
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `suffix` describes the string to append to the name.
+
+        `length` describes the length to pad the name to.
         """
 
         s = ""
@@ -230,12 +265,16 @@ class Row:
         length: Optional[int] = None,
     ) -> Tuple[str, int]:
         """
-        Renders the fraction to a string.
+        Renders the percentage part of the row. Returns a tuple describing the
+        percentage and its unformatted length.
 
-        Arguments:
-            color:  Render in color.
-            prefix: Prefix to inject before the percentage.
-            length: Optional length to pad the percentage to.
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `prefix` describes the string to prepend to the percentage.
+
+        `length` describes the length to pad the percentage to.
         """
 
         s = prefix
@@ -267,11 +306,14 @@ class Row:
         length: Optional[int] = None,
     ) -> Tuple[str, int]:
         """
-        Renders the right fraction to a string.
+        Renders the denominator part of the row. Returns a tuple describing the
+        rendered denominator and its unformatted length.
 
-        Arguments:
-            color:  Render in color.
-            length: Optional length to pad the number to.
+        To render the entire row, call `Row.render`.
+
+        `color` describes whether to render in colour or plain text.
+
+        `length` describes the length to pad the denominator to.
         """
 
         s = ""

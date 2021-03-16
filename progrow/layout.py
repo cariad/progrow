@@ -1,4 +1,4 @@
-""" `Layout` class. """
+""" Hosts the `Layout` class. """
 
 
 from typing import Optional

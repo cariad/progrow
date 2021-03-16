@@ -1,4 +1,6 @@
 """
+[![codecov](https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8)](https://codecov.io/gh/cariad/progrow)
+
 **progrow** is a Python package for graphing the progress of work.
 
 .. image:: example.png
@@ -11,11 +13,11 @@
 pip install progrow
 ```
 
-## Examples
+## Usage
 
 ### Single row
 
-To render a single row to a string, create a `Row` instance and call `Row.render`.
+To render a single row to a string, create a `Row` and call `Row.render`.
 
 ```python
 from progrow import Row
@@ -30,7 +32,7 @@ apple harvest ████████▉
 
 ### Styling
 
-To customise the render, pass a `Style` instance into `Row.render`.
+To customise the render, pass a `Style` into `Row.render`.
 
 ```python
 from progrow import Row, Style
@@ -52,7 +54,7 @@ apple harvest progress: ███▌            23 / 100 • 23%
 
 ### Multiple rows
 
-Create a `Rows` instance and call `Rows.append` for each row.
+Create a `Rows` and call `Rows.append` for each row.
 
 ```python
 from progrow import Rows, Style
@@ -73,6 +75,20 @@ banana harvest  █▊                     9 /  99 •   9%
 caramel harvest ███████████████████▉ 100 / 100 • 100%
 ```
 
+## Issues
+
+Please report any issues at
+[the project homepage on GitHub](https://github.com/cariad/progrow).
+
+
+## About
+
+Hi! 👋  I'm [Cariad Eccleston](https://cariad.io), and I developed **progrow**.
+
+I'm a freelance DevOps engineer, and open-source software is important to me. If
+**progrow** helps you, please consider supporting future development by telling
+your friends, starring [this project on GitHub](https://github.com/cariad/progrow)
+and [sponsoring me](https://github.com/sponsors/cariad).
 
 """
 
