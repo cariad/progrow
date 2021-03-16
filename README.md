@@ -2,7 +2,7 @@
 
 ![Build](https://github.com/cariad/progrow/actions/workflows/ci.yml/badge.svg) [![codecov](https://codecov.io/gh/cariad/progrow/branch/main/graph/badge.svg?token=0WYUG6XRR8)](https://codecov.io/gh/cariad/progrow)
 
-`progrow` is a Python package for describing the progress of work across rows.
+`progrow` is a Python package for graphing the progress of work across rows.
 
 ![progrow example](https://github.com/cariad/progrow/raw/main/example.png)
 
@@ -14,9 +14,7 @@
 pip install progrow
 ```
 
-## Examples
-
-### Rendering a single row
+## Rendering a single row
 
 ```python
 from progrow import Row
@@ -29,7 +27,7 @@ print(row.render())
 apple harvest ████████▉
 ```
 
-### Including fractions, percentages and other styles
+## Including fractions, percentages and other styles
 
 An optional `Style` can be passed into `render()`:
 
@@ -54,7 +52,7 @@ print(row.render(style=style))
 apple harvest progress: ███▌            23 / 100 • 23%
 ```
 
-### Rendering rows from a generator
+## Rendering rows from a generator
 
 ```python
 from progrow import Row, Style
@@ -106,7 +104,7 @@ banana harvest   █▊                    9 /  99 •   9%
 caramel harvest  ███████████████████ 100 / 100 • 100%
 ```
 
-### Rendering rows from a list
+## Rendering rows from a list
 
 When all the row data is available before rendering, create a `Rows` instance to have the layout calculated automatically.
 

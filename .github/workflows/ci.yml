@@ -20,7 +20,8 @@ jobs:
       - if: steps.cache-venv.outputs.cache-hit != 'true'
         run: pipenv sync --dev
 
-      - run: pipenv run ./test.sh
+      - run: pipenv run ./lint.sh
+      - run: pipenv run pytest
 
       - uses: codecov/codecov-action@v1
         with:
