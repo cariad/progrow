@@ -1,3 +1,5 @@
+"""Row classes."""
+
 from math import floor
 from typing import Optional, Tuple
 
