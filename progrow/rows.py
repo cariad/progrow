@@ -73,4 +73,4 @@ class Rows:
         for row in self.rows:
             rendered += row.render(layout, style) + "\n"
 
-        return rendered
+        return rendered.rstrip()
